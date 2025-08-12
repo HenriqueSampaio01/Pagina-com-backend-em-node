@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - R6 Wiki</title>
-  <link rel="stylesheet" href="../css/login.css">
-  <script src="../JS/validarlogin.js" defer></script>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="JS/validarlogin.js" defer></script>
 </head>
 
 <body>
@@ -26,15 +26,18 @@
   <main>
     <div class="login-container">
       <h2>Entrar</h2>
-      <form onsubmit="return validarlogin()">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+      <form action="/login" method="POST" onsubmit="return validarlogin()">
+        <!-- troquei o campo de nome por email porque o backend usa email -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+        <input type="password" id="senha" name="password" placeholder="Digite sua senha" required>
 
         <input type="submit" value="Entrar">
       </form>
+      <div id="mensagem-usuario" class="mensagem"></div>
+
       <div class="link-cadastro">
         <p>Não tem conta? <a href="cadastro.html">Registre-se</a></p>
       </div>

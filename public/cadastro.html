@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro - R6 Wiki</title>
-    <link rel="stylesheet" href="../css/cadastro.css" />
-    <script src="../JS/validar-email.js" defer></script>
-    <script src="../JS/validarcadastro.js" defer></script>
+    <link rel="stylesheet" href="css/cadastro.css" />
+    <script src="JS/validarcadastro.js" defer></script>
   </head>
 
   <body>
@@ -26,50 +25,25 @@
     <main>
       <div class="form-cadastro">
         <h2>Crie sua conta</h2>
-        <form
-        method="post"
-          onsubmit="return validarcadastro()"
-        >
+        <form action="/register" method="POST" onsubmit="return validarcadastro()">
           <label for="nome">Nome:</label>
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            placeholder="Digite seu nome"
-          />
+          <!-- id em pt-BR para css; name em inglês para o servidor -->
+          <input type="text" id="nome" name="name" placeholder="Digite seu nome" />
 
           <label for="email">E-mail:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Digite seu e-mail"
-          />
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required/>
 
           <label for="senha">Senha:</label>
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            placeholder="Crie sua senha"
-          />
+          <input type="password" id="senha" name="password" placeholder="Crie sua senha" required/>
 
           <label for="telefone">Telefone:</label>
-          <input
-            type="tel"
-            id="telefone"
-            name="telefone"
-            placeholder="Digite seu telefone"
-          />
+          <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" />
 
           <div class="genero">
-            <label
-              ><input type="radio" name="genero" value="0" />Masculino</label
-            >
-            <label
-              ><input type="radio" name="genero" value="1" />Feminino</label
-            >
+            <label><input type="radio" name="genero" value="0" />Masculino</label>
+            <label><input type="radio" name="genero" value="1" />Feminino</label>
           </div>
+
           <input type="submit" value="Registrar" />
           <div id="mensagem-usuario" class="mensagem"></div>
         </form>

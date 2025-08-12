@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    # removi o bind mount para evitar sobrescrever node_modules
+    volumes:
+      - db-data:/usr/src/app/data
+    environment:
+      - NODE_ENV=production
+
+volumes:
+  db-data:
